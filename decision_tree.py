@@ -22,8 +22,12 @@ def gain(data):
 		entropy = entropy + item[0]*item[1]/root[1]
 	information_gain = root[0] - entropy
 	print information_gain
-b = [[3,6],[4,6],[1,5]]
-# gain(b)
-a = [[5,8],[3,7],[0,2]]
-gain(a)
-
+se = [[3,6],[4,6],[1,5]]
+gen = [[5,8],[3,7],[0,2]]
+qiao = [[6,10],[2,5],[0,2]]
+wen = [[7,9],[1,5],[0,3]]
+qi = [[5,7],[3,6],[0,4]]
+chu = [[6,12],[2,5]]
+# gain(chu)
+second_se = [[3,4],[3,4],[1,1]]
+gain(second_se)
