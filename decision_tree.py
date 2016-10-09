@@ -1,4 +1,19 @@
 import math
+import csv
+def data_extract():
+	with open('data.csv','r') as d:
+		reader = csv.DictReader(d)
+		p = []
+		table = []
+		for row in reader:
+			p.append(row['education_level'])
+			p.append(row['career'])
+			p.append(row['years_of_experience'])
+			p.append(row['location'])
+			p.append(row['salary'])
+			table.append(p)
+			p = []
+	return table
 def ent(yes,t):
 	if yes == 0 or (t-yes)==0:
 		return 0
@@ -22,12 +37,12 @@ def gain(data):
 		entropy = entropy + item[0]*item[1]/root[1]
 	information_gain = root[0] - entropy
 	print information_gain
-se = [[3,6],[4,6],[1,5]]
-gen = [[5,8],[3,7],[0,2]]
-qiao = [[6,10],[2,5],[0,2]]
-wen = [[7,9],[1,5],[0,3]]
-qi = [[5,7],[3,6],[0,4]]
-chu = [[6,12],[2,5]]
-# gain(chu)
-second_se = [[3,4],[3,4],[1,1]]
-gain(second_se)
+# se = [[3,6],[4,6],[1,5]]
+# gen = [[5,8],[3,7],[0,2]]
+# qiao = [[6,10],[2,5],[0,2]]
+# wen = [[7,9],[1,5],[0,3]]
+# qi = [[5,7],[3,6],[0,4]]
+# chu = [[6,12],[2,5]]
+# second_se = [[3,4],[3,4],[1,1]]
+# gain(second_se)
+print data_extract()
