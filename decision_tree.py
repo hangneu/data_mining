@@ -59,9 +59,6 @@ def gain(data):
 # chu = [[6,12],[2,5]]
 # second_se = [[3,4],[3,4],[1,1]]
 # gain(second_se)
-education_level = detail(data_extract(),0)
-career = detail(data_extract(),1)
-years_of_experience = detail(data_extract(),2)
-location = detail(data_extract(),3)
+
 salary = detail(data_extract(),4)
-print education_level,career,years_of_experience,location,salary
+print salary
