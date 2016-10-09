@@ -14,6 +14,20 @@ def data_extract():
 			table.append(p)
 			p = []
 	return table
+def detail(table,i):
+	container = []
+	for a in table:
+		container.append(a[i])
+	result = []
+	for s in set(container):
+		times = 0
+		tem = [s]
+		for b in container:
+			if (b == s):
+				times = times + 1
+		tem.append(times)
+		result.append(tem)
+	return result
 def ent(yes,t):
 	if yes == 0 or (t-yes)==0:
 		return 0
@@ -45,4 +59,9 @@ def gain(data):
 # chu = [[6,12],[2,5]]
 # second_se = [[3,4],[3,4],[1,1]]
 # gain(second_se)
-print data_extract()
+education_level = detail(data_extract(),0)
+career = detail(data_extract(),1)
+years_of_experience = detail(data_extract(),2)
+location = detail(data_extract(),3)
+salary = detail(data_extract(),4)
+print education_level,career,years_of_experience,location,salary
