@@ -15,19 +15,22 @@ def data_extract():
 			p = []
 	return table
 def detail(table,i):
+	label = lab(table,-1)
+	feature = lab(table,i)
+	re = []
+	for fe in feature:
+		for judge in label:
+			be = [fe,judge,0]
+			for item in table:
+				if(item[i] == fe) and (item[-1] == judge):
+					be[2] = be[2] + 1
+			re.append(be)
+	return re
+def lab(table,i):
 	container = []
 	for a in table:
 		container.append(a[i])
-	result = []
-	for s in set(container):
-		times = 0
-		tem = [s]
-		for b in container:
-			if (b == s):
-				times = times + 1
-		tem.append(times)
-		result.append(tem)
-	return result
+	return list(set(container))
 def ent(yes,t):
 	if yes == 0 or (t-yes)==0:
 		return 0
@@ -51,6 +54,17 @@ def gain(data):
 		entropy = entropy + item[0]*item[1]/root[1]
 	information_gain = root[0] - entropy
 	print information_gain
+# (salary,label) = detail(data_extract(),4)
+# total = salary[0][1] + salary[1][1]
+# print salary
+# print label,total
+
+a = detail(data_extract(),1)
+s = [[a[0][2],(a[0][2]+a[1][2])],[a[2][2],a[2][2]+a[3][2]]]
+gain(s)
+
+
+
 # se = [[3,6],[4,6],[1,5]]
 # gen = [[5,8],[3,7],[0,2]]
 # qiao = [[6,10],[2,5],[0,2]]
@@ -59,6 +73,3 @@ def gain(data):
 # chu = [[6,12],[2,5]]
 # second_se = [[3,4],[3,4],[1,1]]
 # gain(second_se)
-
-salary = detail(data_extract(),4)
-print salary
