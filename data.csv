@@ -1,0 +1,12 @@
+instance,education_level,career,years_of_experience,location,salary
+1,high_school,management,less_than_3,Oregon,Low
+2,high_school,management,3_to_10,california,Low
+3,college,management,less_than_3,california,high
+4,college,service,more_than_10,oregon,low
+5,high_school,service,3_to_10,california,low
+6,college,service,3_to_10,california,high
+7,college,manage,more_than_10,california,high
+8,college,service,less_than_3,oregon,low
+9,high_school,management,more_than_10,oregon,high
+10,high_school,service,more_than_10,oregon,low
+11,high_school,service,less_than_3,california,low
